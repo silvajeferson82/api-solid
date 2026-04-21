@@ -10,7 +10,10 @@
     "build": "tsup src --out-dir build",
     "start": "node build/server.cjs",
     "docker:up": "docker-compose up -d",
-    "docker:down": "docker-compose down"
+    "docker:down": "docker-compose down",
+    "test": "vitest run",
+    "test:watch": "vitest watch",
+    "test:coverage": "vitest run --coverage"
   },
   "keywords": [],
   "author": "",
@@ -20,11 +23,14 @@
     "@rocketseat/eslint-config": "2.2.2",
     "@types/bcryptjs": "2.4.6",
     "@types/node": "25.6.0",
+    "@vitest/coverage-v8": "4.1.4",
     "eslint": "8.57.1",
     "prisma": "4.10.1",
     "tsup": "8.5.1",
     "tsx": "4.21.0",
-    "typescript": "6.0.3"
+    "typescript": "6.0.3",
+    "vite-tsconfig-paths": "6.1.1",
+    "vitest": "4.1.4"
   },
   "dependencies": {
     "@prisma/client": "4.10.1",
