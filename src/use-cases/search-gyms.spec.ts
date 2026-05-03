@@ -1,5 +1,4 @@
 import { beforeEach, describe, expect, it } from 'vitest'
-import { randomUUID } from 'node:crypto'
 import { InMemoryGymsRepository } from '@/repositories/in-memory/in-memory-gyms-repository'
 import { SearchGymsUseCase } from './search-gyms'
 
@@ -7,7 +6,6 @@ let gymsRepository: InMemoryGymsRepository
 let sut: SearchGymsUseCase
 
 describe('Search Gyms Use Case', () => {
-  const userId = randomUUID()
   const gym_title_1 = 'Javascript Gym'
   const gym_title_2 = 'Boot Strap Gym'
   beforeEach(() => {
