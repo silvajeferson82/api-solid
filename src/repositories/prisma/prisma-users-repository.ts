@@ -4,7 +4,11 @@ import type { UsersRepository } from '../users-repository'
 
 export class PrismaUsersRepository implements UsersRepository {
   findById(id: string): Promise<User | null> {
-    throw new Error('Method not implemented.')
+    return prisma.user.findUnique({
+      where: {
+        id,
+      },
+    })
   }
 
   async create(data: Prisma.UserCreateInput) {
