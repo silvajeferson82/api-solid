@@ -7,6 +7,7 @@ interface RegsiterUseCaseRequest {
   name: string
   email: string
   password: string
+  role: 'ADMIN' | 'MEMBER'
 }
 
 interface RegsiterUseCaseResponse {
@@ -20,6 +21,7 @@ export class RegisterUseCase {
     name,
     email,
     password,
+    role,
   }: RegsiterUseCaseRequest): Promise<RegsiterUseCaseResponse> {
     const password_hash = await hash(password, 6)
 
@@ -33,6 +35,7 @@ export class RegisterUseCase {
       name,
       email,
       password_hash,
+      role,
     })
 
     return {
